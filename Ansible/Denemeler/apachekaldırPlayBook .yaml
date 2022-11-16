@@ -1,0 +1,13 @@
+---
+
+  - hosts: all   # hangi sunucularda çalıştırılacak
+    become: true # sudo olarak çalıştırsınmı
+    tasks:
+
+    - name: 1- bu gorev apache yi kaldirir. 
+      apt:
+        name: apache2
+
+    - name: 3- PHP yi kaldirir
+      apt:
+        name: libapache2-mod-php
