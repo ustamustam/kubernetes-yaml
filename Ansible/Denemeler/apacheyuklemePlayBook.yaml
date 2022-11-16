@@ -1,0 +1,17 @@
+---
+
+  - hosts: all   # hangi sunucularda çalıştırılacak
+    become: true # sudo olarak çalıştırsınmı
+    tasks:
+
+    - name: 1- apt update işlemini yapılması
+      apt:
+        update_cache: yes
+         
+    - name: 2- bu gorev apache yuklemesini gerceklestirir. 
+      apt:
+        name: apache2
+
+    - name: 3- PHP yuklenmesi 
+      apt:
+        name: libapache2-mod-php
